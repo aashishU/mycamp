@@ -42,7 +42,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded({ extended: true }));    // so req.body of POST request have a value and not be undefined
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(mongoSanitize());
+app.use(mongoSanitize({
+    replaceWith: '_'
+}));
 
 const secret = process.env.SECRET || 'thisshouldbeabettersecret!';
 
@@ -140,11 +142,11 @@ app.use((req, res, next) => {
 })
 
 // Demo User
-app.get('/fakeUser', async (req, res) => {
-    const user = new User({ email: 'ashish@gmail.com', username: 'ashishashish' });
-    const newUser = await User.register(user, 'chicken');
-    res.send(newUser);
-})
+// app.get('/fakeUser', async (req, res) => {
+//     const user = new User({ email: 'ashish@gmail.com', username: 'ashishashish' });
+//     const newUser = await User.register(user, 'chicken');
+//     res.send(newUser);
+// })
 
 // Routs
 app.use('/', userRoutes);
