@@ -1,8 +1,8 @@
 {
 	"engines": {
-		"node": "18.13.0"
+		"node": "20.5.1"
 	},
-	"name": "13_mycamp",
+	"name": "mycamp",
 	"version": "1.0.0",
 	"description": "",
 	"main": "app.js",
