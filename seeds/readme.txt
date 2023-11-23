@@ -2,7 +2,7 @@
 
 - By running "node index.js" in terminal, we delete everything in our database and populating it with new data.
 
-- This is to fill our database with random data that we can use for our YelpCamp app.
+- This is to fill our database with random data that we can use for our MyCamp app.
 - cities.js file contains information of 1000 cities.
 - seedHelpers.js file contains list of random Names and list of Places.
 - We create title: by combining a Name and a Place chosen randomly.
